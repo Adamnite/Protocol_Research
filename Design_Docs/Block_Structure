@@ -13,6 +13,7 @@ Block{
  Size: "The overall size in bytes of the block"
  Transaction Root: "The root of the merkle tree in which transactions for this block are stored",
  Sides: "Sides are essentially a list of orphan/uncle blocks for the current block: they are valid blocks that were proposed at the same time but were not approved."
+ Signature: "The block signature that validates the block was created by right validator"
 }
 
 The first 10 variables (excluding sides) are all part of the block header. Regarding sides, an algorithm can be used to determine the winning block. When two valid
