@@ -1,0 +1,5 @@
+Define two separate nodes: regular node and validator node. A regular node, which is essentially anyone that is connected to the blockchain, should be able to actively 
+participate in the consensus process. A validator node, on the other hand, has the oppurtunity to run to be a witness and takes part in proposing/approving new blocks. 
+
+
+Add P2P protocols here:
