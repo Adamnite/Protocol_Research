@@ -1,0 +1,22 @@
+#This file documents the basic block structure of an Adamnite Block. 
+
+Block{
+ Previous Hash: "The hash of the previous block",
+ Hash: "The hash of the current block",
+ Timestamp: "The timestamp at which the block was approved",
+ Proposer: "The public address of the validator/witness that proposed the block",
+ Net Fee: "The total amount of transaction fees for the current 
+ Witness List: "A list of the current witnesses chosen for the current block, from the net witness pool", 
+ Transaction List: "A list of all the transactions in the current block",
+ Storage Size: "The net size, in bytes, of all the messages in the transactions for this block",
+ Block Number: "The block number of the current block",
+ Size: "The overall size in bytes of the block"
+ Transaction Root: "The root of the merkle tree in which transactions for this block are stored",
+ Sides: "Sides are essentially a list of orphan/uncle blocks for the current block: they are valid blocks that were proposed at the same time but were not approved."
+}
+
+The first 10 variables (excluding sides) are all part of the block header. Regarding sides, an algorithm can be used to determine the winning block. When two valid
+blocks are proposed at the same time, the one that was proposed by a validator with a higher average score (votes_for + reputation * n, where votes_for is the total 
+number of votes the validator received during the most recent voting session, reputation is their reputation score as determined by RepuStake, and n is an arbitary number
+determined by the total number of particiapants in the network).
+
