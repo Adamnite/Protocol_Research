@@ -1,0 +1,20 @@
+Regular Full Node{
+
+Address: "Hash that acts as the public address for the account in the Adamnite Protocol"
+Private_Key: "Hash that acts as the private key for the account; can be used to sign transactions and blocks"
+Nonce: "The total number of transactions that the account has sent"
+Rewards: "The total amount of staking rewards the account has received"
+Balance: "The total amount of NITE that the account has"
+
+}
+
+Witness_Candidate{
+
+Address: "Hash that acts as the public address for the account in the Adamnite Protocol"
+Private_Key: "Hash that acts as the private key for the account; can be used to sign transactions and blocks"
+Nonce: "The total number of transactions that the account has sent"
+Rewards: "The total amount of staking rewards the account has received"
+Balance: "The total amount of Micali (smallest denomination of NITE) that the account has"
+Reputation: "Measure of a witness's behavior; goes up in case of honest begavior, goes down in case of malicious behavior. Malicious begavior can include proposing invalid blocks"
+Votes For: "The amount of NITE that was committed to this account during the most recent voting round"
+}
