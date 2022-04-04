@@ -2,7 +2,6 @@
 
 Block{
  Previous Hash: "The hash of the previous block",
- Hash: "The hash of the current block",
  Timestamp: "The timestamp at which the block was approved",
  Proposer: "The public address of the validator/witness that proposed the block",
  Net Fee: "The total amount of transaction fees for the current,
@@ -13,9 +12,10 @@ Block{
  Transaction Root: "The root of the merkle tree in which transactions for this block are stored",
  Transaction List: "A list of all the transactions in the current block",
  Witness List: "A list of the current witnesses chosen for the current block, from the net witness pool", 
+ Hash: "The hash of the current block"
 }
 
-The first 8 variables (excluding Witness List and Transaction List) are all part of the block header. Regarding sides, an algorithm can be used to determine the winning block. When two valid
+The first 8 variables (excluding Witness List, Transaction List, and Hash) are all part of the block header. Regarding sides, an algorithm can be used to determine the winning block. When two valid
 blocks are proposed at the same time, the one that was proposed by a validator with a higher average score (votes_for + reputation * n, where votes_for is the total 
 number of votes the validator received during the most recent voting session, reputation is their reputation score as determined by RepuStake, and n is an arbitary number
 determined by the total number of particiapants in the network).
