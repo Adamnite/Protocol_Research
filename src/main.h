@@ -18,6 +18,9 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
+
+// Header File for the main Adamnite Infrastructure, which will include definitions for accounts, transactions, blocks, storage and more. 
+
 class Account;
 class Witness;
 class Witness_Reward;
