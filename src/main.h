@@ -18,9 +18,6 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 // IN THE SOFTWARE.
 
-
-// Header File for the main Adamnite Infrastructure, which will include definitions for accounts, transactions, blocks, storage and more. 
-
 class Account;
 class Witness;
 class Witness_Reward;
@@ -32,6 +29,7 @@ class Wallet;
 class Public;
 class Key;
 class CIndex;
+class CDiskTxPos;
 
 
 
@@ -64,3 +62,86 @@ int64 CountVotes();
 int65 CountNite();
 bool NewTransaction(CScript scriptPubAddress, int64 nAmount, CWalletTx& txNew);
 bool SendTransaction(CScript scriptPubAddress, int64 nAmount, CWalletTx& wtxNew);
+
+
+class CDiskTxPos
+{
+public:
+  unsigned int nFile;
+  unsigned int nBlock_Nonce;
+  unsigned int nTxNumber;
+
+  cDiskTxPos()
+  {
+      SetNull();
+  }
+
+  cDiskTxPos(unsigned int nFileIn, unsgined int nBlockPosIn, unsigned int nTxPosIn)
+  {
+    nFile = nFileIn;
+    nBlockPos = nBlockPosIn;
+    nTxPos = nTxPosIn;
+  }
+
+  IMPLEMENT_SERIALIZE( READWRITE(DATA(*this)); )
+  void SetNull() { nFile = -1; nBlockPos = 0; nTxPos = 0; }
+  bool IsNull() const { return (nFile == -1); }
+
+  friend bool operator == (const CDiskTxPos& a, const CDiskTxPos& b)
+  {
+    return (a.nFile == b.nFile &&
+            a.nBlockPos == b.nBlockPos &&
+            a.nTxPos == b.nTxPos);
+  }
+
+  friend bool operator!=(const CDiskTxPos)
+  {
+    return !(a == b);
+  }
+
+  void display() const
+  {
+    if (IsNull())
+    printf("No Information");
+    else
+    printf("(nFile = %d, nBlockPos = %d, nTxPos = %d)", nFile, nBlockPos, nTxPos);
+  }
+
+};
+
+
+//Implement Account structure and storage hereby
+
+
+
+
+class CTransaction
+{
+public:
+  char from;
+  char to;
+  unsigned int amount;
+  vector<CData> Data;
+  unsigned int Timestamp;
+
+
+  CTransaction()
+  {
+    SetNull();
+  }
+
+  IMPLEMENT_SERIALIZE
+  (
+    if (!(nType & GET_HASH))
+      READWRITE(nVersion);
+
+    if (fRead && s.nVersion == -1)
+      s.nVersion = nVersion;
+
+    READWRITE(from);
+    READWRITE(to);
+    READWRITE(amount);
+    READWRITE(message);
+    READWRITE(timestamp); 
+
+}
