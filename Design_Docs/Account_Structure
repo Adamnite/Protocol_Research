@@ -13,7 +13,8 @@ Address: "Hash that acts as the public address for the account within the Adamni
 Private_Key: "Hash that acts as the private key for the account; can be used to sign transactions and blocks"
 Nonce: "The total number of transactions that the account has sent"
 Balance: "The total amount of NITE that the account has"
-ADVM Code: "The stoage"
+ADVM Code: "The underlying code for the autonomous account; is used to configure transactions and accept various application calls."
+Storage: "The data storage for the account; this is mostly bytecode that dictates how the smart contract will behave 
 
 Witness_Candidate{
 
