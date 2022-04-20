@@ -1,12 +1,19 @@
-Regular Full Node{
+Regular Account{
 
 Address: "Hash that acts as the public address for the account in the Adamnite Protocol"
 Private_Key: "Hash that acts as the private key for the account; can be used to sign transactions and blocks"
 Nonce: "The total number of transactions that the account has sent"
 Rewards: "The total amount of staking rewards the account has received"
 Balance: "The total amount of NITE that the account has"
-
 }
+
+Autonomous Account (on-chain smart contract):
+
+Address: "Hash that acts as the public address for the account within the Adamnite Protocol"
+Private_Key: "Hash that acts as the private key for the account; can be used to sign transactions and blocks"
+Nonce: "The total number of transactions that the account has sent"
+Balance: "The total amount of NITE that the account has"
+ADVM Code: "The stoage"
 
 Witness_Candidate{
 
