@@ -1,0 +1,22 @@
+#This file presents an example in A1 (obviously does not work because A1 has not been created yet)
+#Example of a voting/ballot smart contract
+
+contract Ballot:
+  class Voter:
+    def _init_(self,weight,voted,delegate,vote):
+      self.weight = weight
+      self.voted = voted
+      self.delegate = delegate
+      self.vote = vote
+    
+  
+  
+  class Proposal:
+    def _init_(self, name, count):
+      self.name = name;
+      self.vote_count
+   
+   
+   public chairperson = address
+   
+
